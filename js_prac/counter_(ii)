@@ -1,0 +1,32 @@
+//  @param {integer} init
+//  @return { increment: Function, decrement: Function, reset: Function }
+
+var createCounter = function(init) {
+    let current_value = init;
+    return {
+        increment: function() {
+            current_value += 1;
+            return current_value
+        },
+
+        decrement: function() {
+            current_value -= 1;
+            return current_value
+        },
+        reset: function() {
+            current_value = init
+            return current_value;
+        }
+    }
+};
+
+const counter = createCounter(5);
+const result = [];
+result.push(counter.increment());
+// result.push(counter.increment());
+// result.push(counter.decrement());
+result.push(counter.reset());
+result.push(counter.decrement());
+
+
+console.log(result);
